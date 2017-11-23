@@ -1,0 +1,21 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags pages_tags mezaext_tags products_tags staticfiles %}
+
+{% block meta_og_title %}{% endblock %}
+{% block meta_og_title_desc %}{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="wrapper">
+        <div class="page-title">
+            {% editable page.title %}<h2>{{ page.title }}</h2>{% endeditable %}
+        </div>
+        <div class="page-body">
+            {% editable page.richtextpage.content %}
+            {{ page.richtextpage.content|richtext_filters|safe }}
+            {% endeditable %}
+        </div>
+    </div>
+</div>
+{% endblock %}

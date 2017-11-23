@@ -1,0 +1,41 @@
+<form action="{% url 'mezaext:contacts_form' %}" method="post" class="form">
+    {% csrf_token %}
+    <div class="field">
+        <div class="label">
+            <label for="{{ form.name.id_for_label }}" class="required">{{ form.name.label }}</label>
+        </div>
+        <div class="control">
+            {{ form.name }}
+            <div class="error-text">{{ form.name.errors }}</div>
+        </div>
+    </div>
+    <div class="field">
+        <div class="label">
+            <label for="{{ form.email.id_for_label }}" class="required">{{ form.email.label }}</label>
+        </div>
+        <div class="control">
+            {{ form.email }}
+            <div class="error-text">{{ form.email.errors }}</div>
+        </div>
+    </div>
+    <div class="field">
+        <div class="label">
+            <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+        </div>
+        <div class="control">
+            {{ form.phone }}
+        </div>
+    </div>
+    <div class="field">
+        <div class="label">
+            <label for="{{ form.text.id_for_label }}" class="required">{{ form.text.label }}</label>
+        </div>
+        <div class="control">
+            {{ form.text }}
+            <div class="error-text">{{ form.text.errors }}</div>
+        </div>
+    </div>
+    <div class="field btn-container">
+        <button type="submit" class="btn">Отправить</button>
+    </div>
+</form>
